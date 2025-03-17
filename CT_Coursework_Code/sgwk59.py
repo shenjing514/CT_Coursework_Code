@@ -207,7 +207,6 @@ def test():
     for problem in problem_names:
         try:
             clause_set = load_dimacs(problem)
-            print(f"Loaded {problem}: {clause_set}") 
             check = dpll_sat_solve(clause_set,[])
             if problem == problem_names[1]:
                 assert (not check)

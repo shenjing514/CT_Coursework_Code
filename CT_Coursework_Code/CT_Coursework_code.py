@@ -135,13 +135,10 @@ def dpll_sat_solve(clause_set, partial_assignment):
             break
         partial_assignment += forced_assignments
 
-    # 如果出现空子句，说明不可满足
     if any(len(clause) == 0 for clause in clause_set):
         return False
 
-    # 如果子句集为空，说明已经全部满足
     if not clause_set:
-        # 直接返回当前的 partial_assignment（此时已包含单子句传播的赋值）
         return partial_assignment
     
     first_unassigned = clause_set[0][0]
@@ -223,4 +220,4 @@ def test():
     print("Finished tests")
 
 if __name__ == "__main__":
-    test()  # ✅ 运行所有测试
+    test() 
